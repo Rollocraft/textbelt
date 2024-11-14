@@ -75,7 +75,8 @@ app.get('/providers/:region', (req, res) => {
   res.send(providers[req.params.region]);
 });
 
-app.get('/text', (req, res) => {
+app.post('/text', (req, res) => {
+  res.send({ number: req.body.number, carrier: req.body.carrier, message: req.body.message });
   if (req.body.getcarriers != null
       && (req.body.getcarriers === '1'
        || req.body.getcarriers.toLowerCase() === 'true')) {
@@ -87,8 +88,8 @@ app.get('/text', (req, res) => {
     res.send({ success: false, message: 'Invalid phone number.' });
     return;
   }
-  res.send({ number: req.body.number, carrier: req.body.carrier, message: req.body.message });
-  textRequestHandler(req, res, number, req.body.carrier, 'us');
+
+  textRequestHandler(req, res, number, req.body.carrier, 'de');
 
 });
 
