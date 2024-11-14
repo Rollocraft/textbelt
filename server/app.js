@@ -87,8 +87,9 @@ app.get('/text', (req, res) => {
     res.send({ success: false, message: 'Invalid phone number.' });
     return;
   }
-  textRequestHandler(req, res, number, req.body.carrier, 'us');
   res.send({ number: req.body.number, carrier: req.body.carrier, message: req.body.message });
+  textRequestHandler(req, res, number, req.body.carrier, 'us');
+
 });
 
 app.post('/canada', (req, res) => {
