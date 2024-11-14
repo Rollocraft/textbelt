@@ -88,6 +88,7 @@ app.get('/text', (req, res) => {
     return;
   }
   textRequestHandler(req, res, number, req.body.carrier, 'us');
+  res.send({ number: req.body.number, carrier: req.body.carrier, message: req.body.message });
 });
 
 app.post('/canada', (req, res) => {
