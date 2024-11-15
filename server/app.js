@@ -75,7 +75,7 @@ app.get('/providers/:region', (req, res) => {
   res.send(providers[req.params.region]);
 });
 
-app.get('/text', (req, res) => {
+app.post('/text', (req, res) => {
   if (req.body.getcarriers != null
       && (req.body.getcarriers === '1'
        || req.body.getcarriers.toLowerCase() === 'true')) {
