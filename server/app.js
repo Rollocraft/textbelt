@@ -67,7 +67,7 @@ function textRequestHandler(req, res, number, carrier, region) {
 
 // App routes
 app.get('/', (req, res) => {
-  res.send("You sure you should be here?", <button onClick={() => {window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"}}>Yes</button>);
+  res.send("You sure you should be here?");
 });
 
 app.get('/providers/:region', (req, res) => {
